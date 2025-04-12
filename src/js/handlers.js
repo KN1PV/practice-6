@@ -16,3 +16,24 @@ export async function onDomContentLoaded() {
         console.log(error);
     }
 }
+
+export const categoriesButtonClick = async (event) => {
+    if (event.target.nodeName !== "BUTTON") {
+        return;
+    }
+
+    try {
+        const categoryId = event.target.dataset.categoryId;
+
+        let products;
+        
+        products = categoryId === "all" 
+            ? await getProducts(page) 
+            : await getProductsByCategory(categoryId, page);
+
+        renderProductsLists(products.products || products);
+            
+    } catch (error) {
+        console.log(error);
+    }
+}
