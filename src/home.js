@@ -1,13 +1,6 @@
 //Логіка сторінки Home
 
-import { getCategories, getProducts, getProductsByCategory, getProductsById, getSearchProduct } from "./js/products-api";
+import { onDomContentLoaded } from "./js/handlers";
 
-// console.log(await getCategories());
+document.addEventListener('DOMContentLoaded', onDomContentLoaded);
 
-console.log(await getProducts(1));
-
-// console.log(await getProductsById(1));
-
-// console.log(await getSearchProduct("phone"));
-
-// console.log(await getProductsByCategory("smartphones"));
